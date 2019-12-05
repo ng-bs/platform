@@ -120,6 +120,44 @@
           }
         }
       }
+    },
+    "ngx-evently": {
+      "projectType": "library",
+      "root": "libs/ngx-evently",
+      "sourceRoot": "libs/ngx-evently/src",
+      "prefix": "ngbs",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/ngx-evently/tsconfig.lib.json",
+            "project": "libs/ngx-evently/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ngx-evently/tsconfig.lib.json",
+              "libs/ngx-evently/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ngx-evently/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ngx-evently/jest.config.js",
+            "tsConfig": "libs/ngx-evently/tsconfig.spec.json",
+            "setupFile": "libs/ngx-evently/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

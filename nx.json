@@ -13,6 +13,9 @@
     },
     "demo": {
       "tags": []
+    },
+    "ngx-evently": {
+      "tags": []
     }
   }
 }
