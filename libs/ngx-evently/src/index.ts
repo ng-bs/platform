@@ -1,1 +1,1 @@
-export * from './lib/ngx-evently.module';
+export * from './lib/evently.service';
